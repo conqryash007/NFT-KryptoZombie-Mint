@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 import "./ERC721.sol";
-import "./interfaces/IERC721Enumerable.sol";
+import "./IERC721Enumerable.sol";
 
 error ERC721Enumerable__Index_OutBound();
 error ERC721Enumerable__Owner_Index_OutBound();

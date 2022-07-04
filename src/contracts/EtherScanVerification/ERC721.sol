@@ -7,7 +7,7 @@ error ERC721__INVALID_USER();
 error ERC721__NOT_OWNER();
 error ERC721__SAME_ADDRESS();
 
-import "./interfaces/IERC721.sol";
+import "./IERC721.sol";
 
 contract ERC721 is IERC721 {
     // STATE VARIABLE
