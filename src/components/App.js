@@ -251,7 +251,9 @@ const App = () => {
               )
             ) : (
               <>
-                <h1 style={{ margin: "auto", marginTop: "10vh" }}>
+                <h1
+                  style={{ margin: "auto", marginTop: "10vh", color: "gold" }}
+                >
                   Please Connect a account
                 </h1>
               </>
