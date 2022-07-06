@@ -4,6 +4,8 @@ import Web3Modal from "web3modal";
 import { providerOptions } from "./providerOptions";
 import { ABI, contractAddress } from "./config";
 
+import { MDBSpinner } from "mdb-react-ui-kit";
+
 import {
   MDBCard,
   MDBCardBody,
@@ -33,8 +35,11 @@ const App = () => {
   const [verified, setVerified] = useState();
 
   const [userNFT, setUserNFT] = useState([]);
+  const [nftLoading, setNftLoading] = useState(false);
 
   const [contractKBZ, setContractKBZ] = useState(null);
+
+  const [mintTraxLoad, setMintTraxLoad] = useState(false);
 
   const connectWallet = async () => {
     console.log("-----connect wallet started----");
@@ -62,6 +67,7 @@ const App = () => {
     setMessage("");
     setSignature("");
     setVerified(undefined);
+    setUserNFT([]);
   };
 
   const disconnect = async () => {
@@ -77,23 +83,27 @@ const App = () => {
 
   // FUNCTIONS
   useEffect(() => {
+    setNftLoading(true);
     const findNFTs = async () => {
-      const balOfUser = await contractKBZ.balanceOf(account);
+      try {
+        const balOfUser = await contractKBZ.balanceOf(account);
 
-      const promise = [];
+        const promise = [];
 
-      for (let i = 0; i < balOfUser; i++) {
-        promise.push(contractKBZ.tokenOfOwnerByIndex(account, i));
-      }
-      const val = await Promise.all(promise);
+        for (let i = 0; i < balOfUser; i++) {
+          promise.push(contractKBZ.tokenOfOwnerByIndex(account, i));
+        }
+        const val = await Promise.all(promise);
 
-      const userNFTs = await Promise.all(
-        val.map((curr) => {
-          const idx = parseInt(curr._hex, 16);
-          return contractKBZ.krytoBird(idx);
-        })
-      );
-      setUserNFT(userNFTs);
+        const userNFTs = await Promise.all(
+          val.map((curr) => {
+            const idx = parseInt(curr._hex, 16);
+            return contractKBZ.krytoBird(idx);
+          })
+        );
+        setUserNFT(userNFTs);
+        setNftLoading(false);
+      } catch (err) {}
     };
     if (contractKBZ && account) {
       findNFTs();
@@ -105,6 +115,7 @@ const App = () => {
   const mintZombie = async () => {
     if (contractKBZ) {
       try {
+        setMintTraxLoad(true);
         let idx = await contractKBZ.totalSupply();
         idx = parseInt(idx._hex, 16);
         let stringZombie = `https://app.pixelencounter.com/api/basic/svgmonsters/${idx}?fillType=5`;
@@ -118,25 +129,24 @@ const App = () => {
       } catch (err) {
         console.log(err);
       }
+      setMintTraxLoad(false);
     }
   };
 
   return (
     <div>
-      {/* <h1>App</h1>
-      <button onClick={connectWallet}>CONNECT</button>
-      <button onClick={disconnect}>DISCONNECT</button> */}
       <div className="container-filled">
         <nav
           className="navbar navbar-dark fixed-top 
                 bg-dark flex-md-nowrap p-0 shadow"
+          style={{ backgroundColor: "black" }}
         >
           <div
             className="navbar-brand col-sm-3 col-md-3 
                 mr-0"
             style={{ color: "white" }}
           >
-            Krypto Zombie NFTs (Non Fungible Tokens)
+            Krypto Zombie NFTs
           </div>
           <ul className="navbar-nav px-3">
             <li
@@ -145,60 +155,107 @@ const App = () => {
                 "
             >
               <small className="text-white">
-                <button onClick={connectWallet}>CONNECT</button>
-                <button onClick={disconnect}>DISCONNECT</button>
+                {account ? (
+                  <button className="disconnectBtn" onClick={disconnect}>
+                    DISCONNECT
+                  </button>
+                ) : null}
+                <button className="connectBtn" onClick={connectWallet}>
+                  {account
+                    ? `${account.slice(0, 6)}...${account.slice(-2)}`
+                    : "CONNECT"}
+                </button>
               </small>
             </li>
           </ul>
         </nav>
 
         <div className="container-fluid mt-1">
-          <div className="row">
+          <div className="row upper-cont-001">
             <main role="main" className="col-lg-12 d-flex text-center">
               <div
                 className="content mr-auto ml-auto"
-                style={{ opacity: "0.8" }}
+                style={{ opacity: "0.9" }}
               >
-                <h1 style={{ color: "black" }}>
-                  Krypto Zombie - NFT Marketplace
-                </h1>
-                <button className="mintBtn" onClick={mintZombie}>
-                  MINT
-                </button>
+                <h3 className="animate-charcter">
+                  Krypto Zombie
+                  <br /> NFT Marketplace
+                </h3>
+                {account ? (
+                  <div className="container">
+                    <button
+                      className="mintBtn glow-on-hover"
+                      onClick={mintZombie}
+                    >
+                      {mintTraxLoad ? (
+                        <MDBSpinner />
+                      ) : (
+                        <>
+                          <span role="img">🧟‍♀️</span> MINT YOUR ZOMBIE
+                          <span>🧟</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                ) : null}
               </div>
             </main>
           </div>
           <hr></hr>
           <div className="row textCenter">
-            {userNFT.map((curr, key) => {
-              return (
-                <div key={key}>
-                  <div>
-                    <MDBCard
-                      className="token img"
-                      style={{ maxWidth: "22rem" }}
-                    >
-                      <MDBCardImage
-                        src={curr}
-                        position="top"
-                        height="250rem"
-                        style={{ marginRight: "4px", backgroundColor: "black" }}
-                      />
-                      <MDBCardBody>
-                        <MDBCardTitle> KryptoZombie </MDBCardTitle>
-                        <MDBCardText>
-                          {" "}
-                          The KryptoZombie are uniquely generated pixel zombie
-                          from the depts of a corrupted server! There is only
-                          few of them and each zombie can be owned by a single
-                          person on the Ethereum blockchain.{" "}
-                        </MDBCardText>
-                      </MDBCardBody>
-                    </MDBCard>
+            {userNFT.length > 0 ? (
+              userNFT.map((curr, key) => {
+                return (
+                  <div key={key}>
+                    <div>
+                      <MDBCard
+                        className="token img"
+                        style={{ maxWidth: "22rem" }}
+                      >
+                        <MDBCardImage
+                          src={curr}
+                          position="top"
+                          height="250rem"
+                          style={{
+                            marginRight: "4px",
+                            backgroundColor: "black",
+                          }}
+                        />
+                        <MDBCardBody>
+                          <MDBCardTitle style={{ color: "gold" }}>
+                            {" "}
+                            KryptoZombie{" "}
+                          </MDBCardTitle>
+                          <MDBCardText style={{ color: "wheat" }}>
+                            {" "}
+                            The KryptoZombie are uniquely generated pixel zombie
+                            from the depts of a corrupted server! There is only
+                            few of them and each zombie can be owned by a single
+                            person on the Ethereum blockchain.{" "}
+                          </MDBCardText>
+                        </MDBCardBody>
+                      </MDBCard>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })
+            ) : account ? (
+              !nftLoading ? null : (
+                <>
+                  <div className="loader">
+                    <h1>L</h1>
+                    <MDBSpinner grow className="mx-2" color="warning" />
+                    <h1>ADING</h1>
+                  </div>
+                </>
+              )
+            ) : (
+              <>
+                <h1 style={{ margin: "auto", marginTop: "10vh" }}>
+                  Please Connect a account
+                </h1>
+              </>
+            )}
           </div>
         </div>
       </div>
