@@ -1,3 +1,4 @@
 node_modules
 .vscode
 truffle-config.js
+.env
