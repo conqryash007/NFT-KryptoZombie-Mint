@@ -202,7 +202,7 @@ const App = () => {
             </main>
           </div>
           <hr></hr>
-          <div className="row textCenter">
+          <div className="row textCenter container-nft">
             {userNFT.length > 0 ? (
               userNFT.map((curr, key) => {
                 return (
@@ -252,6 +252,7 @@ const App = () => {
             ) : (
               <>
                 <h1
+                  className="text-coonect-acc"
                   style={{ margin: "auto", marginTop: "10vh", color: "gold" }}
                 >
                   Please Connect a account

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 body {
-  height: 100vh;
+  height: 120vh;
   width: 100%;
   margin: 0;
   background: linear-gradient(-45deg, #41054e, #0a3d02, #033b4f, #c90dc6);
@@ -136,7 +136,13 @@ img {
     background-position: 0 0;
   }
 }
-
+.container-nft {
+  display: flex;
+  justify-content: space-around;
+}
+.text-coonect-acc {
+  font-family: "Press Start 2P", cursive;
+}
 .animate-charcter {
   font-family: "Press Start 2P", cursive;
   text-transform: uppercase;
