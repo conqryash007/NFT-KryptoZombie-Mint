@@ -1,4 +1,4 @@
-# NFT-KryptoBirdz
+# NFT-KryptoZombie
 
 <h1><a href="https://kryptozombie.netlify.app">CHECKOUT THE PROJECT<a/></h1>
 
