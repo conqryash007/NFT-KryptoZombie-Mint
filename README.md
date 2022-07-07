@@ -1,6 +1,19 @@
 # NFT-KryptoZombie
 
 <h1><a href="https://kryptozombie.netlify.app">CHECKOUT THE PROJECT<a/></h1>
+<hr/>
+
+# SCREENSHOT
+
+<p>
+<p align="center">
+<img src="https://github.com/conqryash007/NFT-KryptoZombie-Mint/blob/main/public/ScreenShots/KRYPTO%20ZOMBIE%20-%20NFT%20-%20Google%20Chrome%2007-07-2022%207.12.35%20PM.png" height="300px" width="500px"/>
+<img src="https://github.com/conqryash007/NFT-KryptoZombie-Mint/blob/main/public/ScreenShots/KRYPTO%20ZOMBIE%20-%20NFT%20-%20Google%20Chrome%2007-07-2022%207.12.45%20PM.png" height="300px" width="500px"/>
+<img src="https://github.com/conqryash007/NFT-KryptoZombie-Mint/blob/main/public/ScreenShots/KRYPTO%20ZOMBIE%20-%20NFT%20-%20Google%20Chrome%2007-07-2022%207.12.56%20PM.png" height="300px" width="500px"/>
+<img src="https://github.com/conqryash007/NFT-KryptoZombie-Mint/blob/main/public/ScreenShots/KRYPTO%20ZOMBIE%20-%20NFT%20-%20Google%20Chrome%2007-07-2022%207.13.04%20PM.png" height="300px" width="500px"/>
+</p>
+</p>
+
 
 Please run npm install on the terminal to download the appropriate packages already defined to the package.json file. 
 Make sure you are in the source file. 
