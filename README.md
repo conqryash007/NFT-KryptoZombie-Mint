@@ -3,7 +3,7 @@
 <h1><a href="https://kryptozombie.netlify.app">CHECKOUT THE PROJECT<a/></h1>
 <hr/>
 
-# SCREENSHOT
+# SCREENSHOTs
 
 <p>
 <p align="center">
