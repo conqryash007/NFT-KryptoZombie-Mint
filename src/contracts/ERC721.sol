@@ -19,13 +19,13 @@ contract ERC721 is IERC721 {
 
     // FUNCTIONS
 
-    function balanceOf(address _owner) public view returns (uint256) {
+    function balanceOf(address _owner) public view override returns (uint256) {
         if (_owner == address(0)) revert ERC721__INVALID_USER();
 
         return _ownedTokenCount[_owner];
     }
 
-    function ownerOf(uint256 _tokenId) public view returns (address) {
+    function ownerOf(uint256 _tokenId) public view override returns (address) {
         address owner = _tokenOwner[_tokenId];
         if (owner == address(0)) revert ERC721__INVALID_USER();
 
@@ -65,7 +65,7 @@ contract ERC721 is IERC721 {
         address _from,
         address _to,
         uint256 tokenId
-    ) public {
+    ) public override {
         _transferFrom(_from, _to, tokenId);
     }
 

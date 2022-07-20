@@ -12,11 +12,11 @@ contract ERC721Metadata is IERC721Metadata {
         _symbol = m_symbol;
     }
 
-    function name() external view returns (string memory) {
+    function name() external view override returns (string memory) {
         return _name;
     }
 
-    function symbol() external view returns (string memory) {
+    function symbol() external view override returns (string memory) {
         return _symbol;
     }
 }

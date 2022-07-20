@@ -1,11 +1,39 @@
 const ABI = [
-  { inputs: [], stateMutability: "nonpayable", type: "constructor" },
-  { inputs: [], name: "ERC721__ADDRESS_ZERO", type: "error" },
-  { inputs: [], name: "ERC721__ALREADY_MINTED", type: "error" },
-  { inputs: [], name: "ERC721__INVALID_USER", type: "error" },
-  { inputs: [], name: "ERC721__NOT_OWNER", type: "error" },
-  { inputs: [], name: "ERC721__SAME_ADDRESS", type: "error" },
-  { inputs: [], name: "Kryptobird__ALREADY_EXISTS", type: "error" },
+  {
+    inputs: [],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
+    inputs: [],
+    name: "ERC721__ADDRESS_ZERO",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "ERC721__ALREADY_MINTED",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "ERC721__INVALID_USER",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "ERC721__NOT_OWNER",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "ERC721__SAME_ADDRESS",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "Kryptozombie__ALREADY_EXISTS",
+    type: "error",
+  },
   {
     anonymous: false,
     inputs: [
@@ -40,7 +68,12 @@ const ABI = [
         name: "_from",
         type: "address",
       },
-      { indexed: true, internalType: "address", name: "_to", type: "address" },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "_to",
+        type: "address",
+      },
       {
         indexed: true,
         internalType: "uint256",
@@ -53,8 +86,16 @@ const ABI = [
   },
   {
     inputs: [
-      { internalType: "address", name: "_to", type: "address" },
-      { internalType: "uint256", name: "_tokenId", type: "uint256" },
+      {
+        internalType: "address",
+        name: "_to",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "_tokenId",
+        type: "uint256",
+      },
     ],
     name: "approve",
     outputs: [],
@@ -62,21 +103,51 @@ const ABI = [
     type: "function",
   },
   {
-    inputs: [{ internalType: "address", name: "_owner", type: "address" }],
+    inputs: [
+      {
+        internalType: "address",
+        name: "_owner",
+        type: "address",
+      },
+    ],
     name: "balanceOf",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
     stateMutability: "view",
     type: "function",
   },
   {
-    inputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    name: "krytoBird",
-    outputs: [{ internalType: "string", name: "", type: "string" }],
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "kryptoZombie",
+    outputs: [
+      {
+        internalType: "string",
+        name: "",
+        type: "string",
+      },
+    ],
     stateMutability: "view",
     type: "function",
   },
   {
-    inputs: [{ internalType: "string", name: "_krytoBird", type: "string" }],
+    inputs: [
+      {
+        internalType: "string",
+        name: "_kryptoZombie",
+        type: "string",
+      },
+    ],
     name: "mint",
     outputs: [],
     stateMutability: "nonpayable",
@@ -85,60 +156,140 @@ const ABI = [
   {
     inputs: [],
     name: "name",
-    outputs: [{ internalType: "string", name: "", type: "string" }],
+    outputs: [
+      {
+        internalType: "string",
+        name: "",
+        type: "string",
+      },
+    ],
     stateMutability: "view",
     type: "function",
   },
   {
-    inputs: [{ internalType: "uint256", name: "_tokenId", type: "uint256" }],
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_tokenId",
+        type: "uint256",
+      },
+    ],
     name: "ownerOf",
-    outputs: [{ internalType: "address", name: "", type: "address" }],
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
     stateMutability: "view",
     type: "function",
   },
   {
-    inputs: [{ internalType: "bytes4", name: "interfaceId", type: "bytes4" }],
+    inputs: [
+      {
+        internalType: "bytes4",
+        name: "interfaceId",
+        type: "bytes4",
+      },
+    ],
     name: "supportsInterface",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [],
     name: "symbol",
-    outputs: [{ internalType: "string", name: "", type: "string" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "uint256", name: "index", type: "uint256" }],
-    name: "tokenByIndex",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    outputs: [
+      {
+        internalType: "string",
+        name: "",
+        type: "string",
+      },
+    ],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [
-      { internalType: "address", name: "owner", type: "address" },
-      { internalType: "uint256", name: "index", type: "uint256" },
+      {
+        internalType: "uint256",
+        name: "index",
+        type: "uint256",
+      },
+    ],
+    name: "tokenByIndex",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "owner",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "index",
+        type: "uint256",
+      },
     ],
     name: "tokenOfOwnerByIndex",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [],
     name: "totalSupply",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [
-      { internalType: "address", name: "_from", type: "address" },
-      { internalType: "address", name: "_to", type: "address" },
-      { internalType: "uint256", name: "tokenId", type: "uint256" },
+      {
+        internalType: "address",
+        name: "_from",
+        type: "address",
+      },
+      {
+        internalType: "address",
+        name: "_to",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "tokenId",
+        type: "uint256",
+      },
     ],
     name: "transferFrom",
     outputs: [],
@@ -147,6 +298,6 @@ const ABI = [
   },
 ];
 
-let contractAddress = "0xb65F43b151a39496207B08eD7b00Ff5c58B574a7";
+let contractAddress = "0x9ebC837e52db0f778d202509040B89E826F5198d";
 
 export { ABI, contractAddress };

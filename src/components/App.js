@@ -42,7 +42,6 @@ const App = () => {
   const [mintTraxLoad, setMintTraxLoad] = useState(false);
 
   const connectWallet = async () => {
-    console.log("-----connect wallet started----");
     try {
       const provider = await web3Modal.connect();
       const library = new ethers.providers.Web3Provider(provider);
@@ -56,7 +55,6 @@ const App = () => {
       if (accounts) setAccount(accounts[0]);
       setChainId(network.chainId);
     } catch (error) {
-      console.log(error);
       setError(error);
     }
   };
@@ -98,7 +96,7 @@ const App = () => {
         const userNFTs = await Promise.all(
           val.map((curr) => {
             const idx = parseInt(curr._hex, 16);
-            return contractKBZ.krytoBird(idx);
+            return contractKBZ.kryptoZombie(idx);
           })
         );
         setUserNFT(userNFTs);
@@ -109,8 +107,6 @@ const App = () => {
       findNFTs();
     }
   }, [contractKBZ, account]);
-
-  console.log(account, contractKBZ);
 
   const mintZombie = async () => {
     if (contractKBZ) {
