@@ -3,14 +3,14 @@
 <h1><a href="https://kryptozombie.netlify.app">CHECKOUT THE PROJECT<a/></h1>
 <hr/>
 
-# SCREENSHOT
+# SCREENSHOTs
 
 <p>
 <p align="center">
-<img src="https://github.com/conqryash007/NFT-KryptoZombie-Mint/blob/main/public/ScreenShots/KRYPTO%20ZOMBIE%20-%20NFT%20-%20Google%20Chrome%2007-07-2022%207.12.35%20PM.png" height="300px" width="500px"/>
-<img src="https://github.com/conqryash007/NFT-KryptoZombie-Mint/blob/main/public/ScreenShots/KRYPTO%20ZOMBIE%20-%20NFT%20-%20Google%20Chrome%2007-07-2022%207.12.45%20PM.png" height="300px" width="500px"/>
-<img src="https://github.com/conqryash007/NFT-KryptoZombie-Mint/blob/main/public/ScreenShots/KRYPTO%20ZOMBIE%20-%20NFT%20-%20Google%20Chrome%2007-07-2022%207.12.56%20PM.png" height="300px" width="500px"/>
-<img src="https://github.com/conqryash007/NFT-KryptoZombie-Mint/blob/main/public/ScreenShots/KRYPTO%20ZOMBIE%20-%20NFT%20-%20Google%20Chrome%2007-07-2022%207.13.04%20PM.png" height="300px" width="500px"/>
+<img src="https://github.com/conqryash007/NFT-KryptoZombie-Mint/blob/main/public/ScreenShots/KRYPTO%20ZOMBIE%20-%20NFT%20-%20Google%20Chrome%2007-07-2022%207.12.35%20PM.png" height="300px" width="600px"/>
+<img src="https://github.com/conqryash007/NFT-KryptoZombie-Mint/blob/main/public/ScreenShots/KRYPTO%20ZOMBIE%20-%20NFT%20-%20Google%20Chrome%2007-07-2022%207.12.45%20PM.png" height="300px" width="600px"/>
+<img src="https://github.com/conqryash007/NFT-KryptoZombie-Mint/blob/main/public/ScreenShots/KRYPTO%20ZOMBIE%20-%20NFT%20-%20Google%20Chrome%2007-07-2022%207.12.56%20PM.png" height="300px" width="600px"/>
+<img src="https://github.com/conqryash007/NFT-KryptoZombie-Mint/blob/main/public/ScreenShots/KRYPTO%20ZOMBIE%20-%20NFT%20-%20Google%20Chrome%2007-07-2022%207.13.04%20PM.png" height="300px" width="600px"/>
 </p>
 </p>
 
