@@ -1,9 +1,14 @@
 # NFT-KryptoZombie
 
-<h1><a href="https://kryptozombie.netlify.app">CHECKOUT THE PROJECT<a/></h1>
+<h2><a href="https://kryptozombie.netlify.app">CHECKOUT THE PROJECT<a/></h2>
 <hr/>
 
-# SCREENSHOTs
+## About🧟
+<p align="center">
+NFT-KryptoZombie is a collection of pixelated zombies. By paying a tiny gas fee, platform users can gain ownership of each KryptoZombie in the collection. All ownership details are stored on the Ethereum blockchain, and the smart contract adheres to the professional ERC721 standards.
+</p>
+
+## SCREENSHOTs📷
 
 <p>
 <p align="center">
