@@ -1,6 +1,6 @@
 # NFT-KryptoZombie
 
-<h2>LINK TO THE PROJECT<a href="https://kryptozombie.netlify.app">CLICK HERE!<a/></h2>
+<h2>LINK TO THE PROJECT: <a href="https://kryptozombie.netlify.app">CLICK HERE!<a/></h2>
 <hr/>
 
 ## About🧟
